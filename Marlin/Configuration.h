@@ -124,7 +124,7 @@
 // The following define selects which electronics board you have.
 // Please choose the name from boards.h that matches your setup
 #ifndef MOTHERBOARD
-  #define MOTHERBOARD BOARD_MELZI_CREALITY
+  #define MOTHERBOARD BOARD_MKS_GEN_L
 #endif
 
 // Optional custom name for your RepStrap or other custom machine
@@ -547,13 +547,13 @@
  *          TMC5130, TMC5130_STANDALONE
  * :['A4988', 'DRV8825', 'LV8729', 'L6470', 'TB6560', 'TB6600', 'TMC2100', 'TMC2130', 'TMC2130_STANDALONE', 'TMC2208', 'TMC2208_STANDALONE', 'TMC26X', 'TMC26X_STANDALONE', 'TMC2660', 'TMC2660_STANDALONE', 'TMC5130', 'TMC5130_STANDALONE']
  */
-//#define X_DRIVER_TYPE  A4988
-//#define Y_DRIVER_TYPE  A4988
-//#define Z_DRIVER_TYPE  A4988
+#define X_DRIVER_TYPE  TMC2208
+#define Y_DRIVER_TYPE  TMC2208
+#define Z_DRIVER_TYPE  TMC2208
 //#define X2_DRIVER_TYPE A4988
 //#define Y2_DRIVER_TYPE A4988
 //#define Z2_DRIVER_TYPE A4988
-//#define E0_DRIVER_TYPE A4988
+#define E0_DRIVER_TYPE TMC2208
 //#define E1_DRIVER_TYPE A4988
 //#define E2_DRIVER_TYPE A4988
 //#define E3_DRIVER_TYPE A4988
@@ -724,7 +724,7 @@
 /**
  * The BLTouch probe uses a Hall effect sensor and emulates a servo.
  */
-//#define BLTOUCH
+#define BLTOUCH
 #if ENABLED(BLTOUCH)
   //#define BLTOUCH_DELAY 375   // (ms) Enable and increase if needed
 #endif
@@ -773,8 +773,8 @@
  *      O-- FRONT --+
  *    (0,0)
  */
-#define X_PROBE_OFFSET_FROM_EXTRUDER 10  // X offset: -left  +right  [of the nozzle]
-#define Y_PROBE_OFFSET_FROM_EXTRUDER 10  // Y offset: -front +behind [the nozzle]
+#define X_PROBE_OFFSET_FROM_EXTRUDER -44  // X offset: -left  +right  [of the nozzle]
+#define Y_PROBE_OFFSET_FROM_EXTRUDER -14  // Y offset: -front +behind [the nozzle]
 #define Z_PROBE_OFFSET_FROM_EXTRUDER 0   // Z offset: -below +above  [the nozzle]
 
 // Certain types of probes need to stay away from edges
@@ -924,7 +924,7 @@
  * For other boards you may need to define FIL_RUNOUT_PIN, FIL_RUNOUT2_PIN, etc.
  * By default the firmware assumes HIGH=FILAMENT PRESENT.
  */
-//#define FILAMENT_RUNOUT_SENSOR
+#define FILAMENT_RUNOUT_SENSOR
 #if ENABLED(FILAMENT_RUNOUT_SENSOR)
   #define NUM_RUNOUT_SENSORS   1     // Number of sensors, up to one per extruder. Define a FIL_RUNOUT#_PIN for each.
   #define FIL_RUNOUT_INVERTING false // set to true to invert the logic of the sensor.
@@ -970,7 +970,7 @@
  *   leveling in steps so you can manually adjust the Z height at each grid-point.
  *   With an LCD controller the process is guided step-by-step.
  */
-//#define AUTO_BED_LEVELING_3POINT
+#define AUTO_BED_LEVELING_3POINT
 //#define AUTO_BED_LEVELING_LINEAR
 //#define AUTO_BED_LEVELING_BILINEAR
 //#define AUTO_BED_LEVELING_UBL
@@ -1271,7 +1271,7 @@
  *    P1  Raise the nozzle always to Z-park height.
  *    P2  Raise the nozzle by Z-park amount, limited to Z_MAX_POS.
  */
-//#define NOZZLE_PARK_FEATURE
+#define NOZZLE_PARK_FEATURE
 
 #if ENABLED(NOZZLE_PARK_FEATURE)
   // Specify a park position as { X, Y, Z }
@@ -1423,7 +1423,7 @@
  * you must uncomment the following option or it won't work.
  *
  */
-#define SDSUPPORT
+// #define SDSUPPORT
 
 /**
  * SD CARD: SPI SPEED
