@@ -671,7 +671,7 @@
  *
  * Enable this option for a probe connected to the Z Min endstop pin.
  */
-#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
+//#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
 
 /**
  * Z_MIN_PROBE_ENDSTOP
@@ -692,7 +692,7 @@
  * disastrous consequences. Use with caution and do your homework.
  *
  */
-//#define Z_MIN_PROBE_ENDSTOP
+#define Z_MIN_PROBE_ENDSTOP
 
 /**
  * Probe Type
@@ -726,7 +726,7 @@
  */
 #define BLTOUCH
 #if ENABLED(BLTOUCH)
-  //#define BLTOUCH_DELAY 375   // (ms) Enable and increase if needed
+  #define BLTOUCH_DELAY 375   // (ms) Enable and increase if needed
 #endif
 
 /**
@@ -740,8 +740,8 @@
 #if ENABLED(PROBING_HEATERS_OFF)
   //#define WAIT_FOR_BED_HEATER     // Wait for bed to heat back up between probes (to improve accuracy)
 #endif
-//#define PROBING_FANS_OFF          // Turn fans off when probing
-//#define DELAY_BEFORE_PROBING 200  // (ms) To prevent vibrations from triggering piezo sensors
+#define PROBING_FANS_OFF          // Turn fans off when probing
+#define DELAY_BEFORE_PROBING 200  // (ms) To prevent vibrations from triggering piezo sensors
 
 // A probe that is deployed and stowed with a solenoid pin (SOL1_PIN)
 //#define SOLENOID_PROBE
