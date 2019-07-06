@@ -55,6 +55,11 @@
 //
 // Servos
 //
+
+/*
+ *Block remapped to use pins for E1 with UART and TMC2208 driver 
+ *
+ *
 #ifdef IS_RAMPS_13
   #define SERVO0_PIN        7   // RAMPS_13 // Will conflict with BTN_EN2 on LCD_I2C_VIKI
 #else
@@ -65,6 +70,11 @@
 #ifndef SERVO3_PIN
   #define SERVO3_PIN        4
 #endif
+*/
+
+#define SERVO0_PIN          4
+#define SERVO2_PIN          5
+
 
 //
 // Limit Switches
@@ -181,11 +191,11 @@
   #define Z_SERIAL_RX_PIN    65
   #define Z2_SERIAL_TX_PIN   -1
   #define Z2_SERIAL_RX_PIN   -1
-
+  
   #define E0_SERIAL_TX_PIN   44
   #define E0_SERIAL_RX_PIN   66
-  #define E1_SERIAL_TX_PIN   -1
-  #define E1_SERIAL_RX_PIN   -1
+  #define E1_SERIAL_TX_PIN   6 // changed by sam
+  #define E1_SERIAL_RX_PIN   11 // changed by sam
   #define E2_SERIAL_TX_PIN   -1
   #define E2_SERIAL_RX_PIN   -1
   #define E3_SERIAL_TX_PIN   -1
